@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru" ng-app="vkNewsBrowser">
+<head>
+
+  <meta charset="utf-8">
+  <title>ВКонтакте - Браузер Новостей</title>
+
+  <link rel="stylesheet" href="css/lib/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
+
+  <script type="text/javascript">
+    if (!window.console) window.console = {};
+    if (!window.console.log) window.console.log = function() {};
+  </script>
+
+  <script src="http://vk.com/js/api/xd_connection.js?2"></script>
+
+  <script src="lib/modernizr/modernizr.js"></script>
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular/locale/angular-locale_ru.js"></script>
+  <script src="lib/q/q.js"></script>
+
+  <script src="js/app.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/directives.js"></script>
+
+</head>
+<body ng-controller="MainCtrl">
+  <!--{{console.log('dirty-check');}}-->
+  <aside id="sidebar" class="panel panel-left pull-left"
+         ng-collapse="#collapse-sidebar"
+         collapse-direction="left" draw-delay="500">
+    <div id="collapse-sidebar" class="collapse-button pull-right"></div>
+    <div ng-include="'partials/sidebar.html'"></div>
+  </aside>
+
+  <div id="main" class="pull-left">
+
+    <aside id="menu" class="panel panel-top"
+           ng-collapse="#collapse-menu" collapse-direction="up"
+           draw-delay="500">
+      <div id="collapse-menu"
+           class="collapse-button pull-right"></div>
+      <div ng-include="'partials/menu.html'"></div>
+    </aside>
+
+    <div id="content" class="text-center" ng-view></div>
+
+  </div>
+
+</body>
+</html>

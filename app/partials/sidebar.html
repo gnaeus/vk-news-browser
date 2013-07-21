@@ -1,0 +1,42 @@
+<aside id="filter" class="panel panel-left panel-top"
+       ng-collapse="#collapse-filter" collapse-direction="up"
+       draw-delay="500" collapsed>
+  <div id="collapse-filter" class="collapse-button pull-left"></div>
+  <div ng-include="'partials/filter.html'"></div>
+</aside>
+
+<div id="sources" class="panel panel-left text-center">
+  <!--<form class="form-search text-center">-->
+  <!--<input type="text" ng-model="query" placeholder="Поиск..."-->
+         <!--class="input-small search-query">-->
+  <!--</form>-->
+
+  <ul id="sources-list" class="unstyled">
+    <li ng-repeat="user in users" class="media source">
+
+      <a class="pull-left" href="#">
+        <img class="media-object avatar" ng-src="{{user.avatar}}">
+      </a>
+
+      <div class="media-body">
+        <div class="news-counter vk-button vk-active pull-right">
+          {{user.newsCount}}
+        </div>
+        <div class="user-name">
+            {{user.firstName}} {{user.lastName}}
+        </div>
+      </div>
+
+    </li>
+  </ul>
+
+  <div class="vk-pagination text-center">
+    <ul ng-switch-class="vk-active">
+      <li class="vk-active"><span>1-50</span></li>
+      <li><span>51-100</span></li>
+      <li exclude-switch-class><span>...</span></li>
+      <li><span>101-150</span></li>
+    </ul>
+  </div>
+
+</div>

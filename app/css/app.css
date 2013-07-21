@@ -1,0 +1,221 @@
+/**  ------------  Application layout  ----------------  */
+
+/**  Application window  */
+body {
+    position: absolute;
+    height: auto;
+    width: 800px;
+    border-top: 1px solid #d9e1e7;
+    font-size: 11px;
+    font-family: tahoma, arial, verdana, "Lucida Sans", sans-serif;
+}
+
+/**  Left application panel  */
+#sidebar {
+    height: 100%;
+    width: 220px;
+    transition: width 0.5s ease;
+}
+
+#sidebar.collapsed {
+    width: 27px;
+}
+
+/**  Settings of source list  */
+#filter {
+    width: 100%;
+    height: 160px;
+    transition: height 0.5s ease;
+}
+
+#filter.collapsed {
+    height: 28px;
+}
+
+/**  Sources of news  */
+#sources {
+    width: 100%;
+    overflow-y: auto;
+    transition: height 0.5s ease;
+}
+
+#sources-list {
+    margin-top: 6px;
+}
+
+/**  Main area of application  */
+#main {
+    width: 579px;
+    transition: width 0.5s ease;
+}
+
+#sidebar.collapsed + #main {
+    width: 772px;
+}
+
+/**  Top panel for main area  */
+#menu {
+    height: 56px;
+    width: 100%;
+    border-bottom: 1px solid #d9e1e7;
+    transition: height 0.5s ease;
+}
+
+#menu.collapsed {
+    height: 28px;
+}
+
+#menu-content {
+    margin-left: 20px;
+    padding-top: 6px;
+}
+
+/**  Area for news content  */
+#content {
+    width: 100%;
+    overflow-y: auto;
+    transition: height 0.5s ease;
+}
+
+
+/**  ------------  Elements  --------------------------  */
+
+/**  Source  */
+.source {
+    height: 58px;
+    margin: 3px;
+    border-radius: 3px;
+    border: 1px solid #d9e1e7;
+    background-color: #ffffff;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.source:hover {
+    background-color: #e1e7ed;
+}
+
+.source .pull-left {
+    margin-right: 3px;
+}
+
+.source .user-name {
+    margin-top: 6px;
+    overflow: hidden;
+    word-break: break-all;
+    color: #2B587A;
+    line-height: 1.5em;
+}
+
+.source .news-counter {
+    margin-top: 3px;
+    margin-right: 3px;
+    margin-left: 3px;
+}
+
+/**  Collapse Button  */
+.collapse-button {
+    height: 20px;
+    width: 20px;
+    margin: 3px;
+    border: 1px solid #d9e1e7;
+    border-radius: 3px;
+    text-align: center;
+}
+
+/**  Avatar  */
+.avatar {
+    width: 50px;
+    height: 50px;
+    margin: 3px;
+    border-radius: 3px;
+    border: 1px solid #d9e1e7;
+}
+
+/**  VK Button  **/
+.vk-button {
+    display: inline-block;
+    margin-right: 10px;
+    padding-left: 6px;
+    padding-right: 6px;
+    border-radius: 2px;
+    color: #2B587A;
+    font-weight: bold;
+    line-height: 2em;
+    cursor: pointer;
+}
+
+a.vk-button {
+    text-decoration: none;
+}
+
+.vk-button:hover,
+.vk-button:focus {
+    background-color: #e1e7ed;
+}
+
+.vk-button.vk-active {
+    background-color: #597DA3;
+    color:  #ffffff;
+}
+
+/**  Panel  */
+.panel {
+    background-color: #f7f7f7;
+}
+
+.panel.panel-left {
+    border-right: 1px solid #d9e1e7;
+}
+
+.panel.panel-top {
+    border-bottom: 1px solid #d9e1e7;
+}
+
+/** Pagination  */
+.vk-pagination {
+    margin: 3px;
+}
+
+.vk-pagination > ul {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+}
+
+.vk-pagination > ul > li {
+    display: inline;
+}
+
+.vk-pagination > ul > li > * {
+    float: left;
+    padding: 0 4px;
+    background-color: #ffffff;
+    border: 1px solid #d9e1e7;
+    border-left-width: 0;
+    text-decoration: none;
+    color: #2B587A;
+    cursor: pointer;
+}
+
+.vk-pagination > ul > li:first-child > * {
+    border-left-width: 1px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.vk-pagination > ul > li:last-child > * {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.vk-pagination > ul > li > *:hover,
+.vk-pagination > ul > li > *:focus {
+    background-color: #e1e7ed;
+}
+
+.vk-pagination > ul > li.vk-active > * {
+    background-color: #597DA3;
+    color:  #ffffff;
+}

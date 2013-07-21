@@ -1,0 +1,18 @@
+<div id="menu-content">
+  <div ng-switch-class="vk-active">
+    <a href="#/about" class="vk-button vk-active pull-right">О программе</a>
+    <a href="#/settings" class="vk-button pull-right">Настройки</a>
+    <a href="#/news" class="vk-button">Лента</a>
+    <a href="#/photos" class="vk-button">Фотографии</a>
+  </div>
+  <div class="vk-pagination text-center">
+    <ul ng-switch-class="vk-active">
+      <li class="vk-active"><a href="#">1-50</a></li>
+      <li><a href="#">51-100</a></li>
+      <li><a href="#">101-150</a></li>
+      <li exclude-switch-class><a href="">...</a></li>
+      <li><a href="#">501-550</a></li>
+      <li><a href="#">550-568</a></li>
+    </ul>
+  </div>
+</div>
