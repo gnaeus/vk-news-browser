@@ -15,15 +15,15 @@
     <li ng-repeat="user in users" class="media source">
 
       <a class="pull-left" href="#">
-        <img class="media-object avatar" ng-src="{{user.avatar}}">
+        <img class="media-object avatar" ng-src="{{user.photo}}">
       </a>
 
       <div class="media-body">
         <div class="news-counter vk-button vk-active pull-right">
-          {{user.newsCount}}
+          {{user.news_count}}
         </div>
         <div class="user-name">
-            {{user.firstName}} {{user.lastName}}
+            {{user.first_name}} {{user.last_name}}
         </div>
       </div>
 

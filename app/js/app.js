@@ -20,19 +20,19 @@ angular.module('vkNewsBrowser',
   ['$routeProvider', function($routeProvider) {
     $routeProvider.when('/news', {
       templateUrl: 'partials/news.html',
-      controller: 'MainCtrl'
+      controller: 'StubCtrl'
     });
     $routeProvider.when('/photos', {
       templateUrl: 'partials/photos.html',
-      controller: 'MainCtrl'
+      controller: 'StubCtrl'
     });
     $routeProvider.when('/settings', {
       templateUrl: 'partials/settings.html',
-      controller: 'MainCtrl'
+      controller: 'StubCtrl'
     });
     $routeProvider.when('/about', {
       templateUrl: 'partials/about.html',
-      controller: 'MainCtrl'
+      controller: 'StubCtrl'
     });
     $routeProvider.otherwise({ redirectTo: '/about' });
   }]);

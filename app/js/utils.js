@@ -6,6 +6,7 @@
 angular.module('vkNewsBrowser.utils', [])
   .value('Q',/* Kris Kowal's Q */ Q)
   .value('Modernizr',/* Modernizr */ Modernizr)
+  .value('lodash', /* Lo-Dash */ _)
   .factory('VK',
   /**
    * @object VK Promise of vkontakte-api

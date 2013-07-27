@@ -3,45 +3,33 @@
 /**
  * Controllers module
  */
-angular.module('vkNewsBrowser.controllers', ['vkNewsBrowser.utils'])
+angular.module('vkNewsBrowser.controllers', [
+    'vkNewsBrowser.utils', 'vkNewsBrowser.services'
+  ])
+  .controller('StubCtrl', ['$scope', function($scope) {}])// TODO: replace by other
   .controller('MainCtrl',
   /**
    * @function MainCtrl Main controller of the application
    * @param {Object} $scope Scope
    * @param {Function} resizeIFrame Function to resize IFrame
    */
-  ['$scope', 'resizeIFrame', function($scope, resizeIFrame) {
+  ['$scope', 'API', 'resizeIFrame', function($scope, API, resizeIFrame) {
+    //$scope.console = console;
 
     $scope.$on('$viewContentLoaded', resizeIFrame);
     $scope.$on('$includeContentLoaded', resizeIFrame);
 
-    $scope.console = console;
+    API.getFriends()
+      .then(function(users) {
+        $scope.users = users;
+        $scope.$digest();
+        return API.getNews();
+      })
+      .then(function(news) {
+        console.log(news);
+        $scope.$digest();
+        resizeIFrame();
+      });
 
-    $scope.users = [
-      {
-        firstName: 'Иван', lastName: 'Петров',
-        avatar: 'img/avatar.png', newsCount: 1
-      },
-      {
-        firstName: 'Петр', lastName: 'Сидоров',
-        avatar: 'img/avatar.png', newsCount: 2
-      },
-      {
-        firstName: 'Сидор', lastName: 'Иванов',
-        avatar: 'img/avatar.png', newsCount: 30
-      },
-      {
-        firstName: 'Никита', lastName: 'Савушкин',
-        avatar: 'img/avatar.png', newsCount: 356
-      },
-      {
-        firstName: 'Иван', lastName: 'Петров',
-        avatar: 'img/avatar.png', newsCount: 1000
-      },
-      {
-        firstName: 'Константин Константинович', lastName: 'Константинов',
-        avatar: 'img/avatar.png', newsCount: 2
-      }
-    ];
   }]);
 
