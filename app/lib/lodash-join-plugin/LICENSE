@@ -19,15 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-
-This repository contains the following external libraries (each with their own
-license):
-
- - Closure Compiler: Apache License v2.0
- - Twitter Bootstrap:  Apache License v2.0
- - Angular JS: MIT License
- - Angular Seed: MIT License
- - Modernizr: MIT Licence
- - Lo-Dash: MIT License
- - Lo-Dash Join Plugin: MIT License
- - Q: MIT License
